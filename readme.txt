@@ -16,7 +16,10 @@ Once installed, the plugin will **automatically** change all your category links
 
 There is also an admin panel that will let you enable/disable 301 redirects, as well as change the text to remove from the category link.
 
-**Versions 1.1 Update** - Added the `Update category links with pages` setting to modify category links that contain */page/* to become */?paged*
+*Change Log*
+
+**Version 1.1  (Dec-31-2008)** - Added the `Update category links with pages` setting to modify category links that contain */page/* to become */?paged*
+Version 1.0 (Dec-30-2008) - Initial release
 
 == Installation ==
 
@@ -29,6 +32,21 @@ There is also an admin panel that will let you enable/disable 301 redirects, as 
 = What if other links on my site contain /category/? =
 
 You can disable the automatic 301 redirect feature via the settings. If it is enabled, then ANY link that contains the base category directory (by default */category/*) will be redirected with the base category directory removed.
+
+= It's not working? =
+
+The first thing to check is your `permalink settings`. Is your permalink structure `/%postname%`? If so, the plugin will not work because WordPress will not be able to tell the difference between a category page and a post page without the `/category/` in the URL. I would recommend the permalink settings: `/%category%/%postname%`, which is what I use.
+
+If your permalink settings are okay, then follow these steps.
+
+1. Disable the plugin
+1. Go to your category link, something like `http://www.anothercoder.com/category/news`.
+* Is that working? If not, check your other plugins and WordPress installation as something is wrong there.
+1. Manually remove the `/category/` from your link and go to that URL, something like `http://www.anothercoder.com/news`
+* Is that working? If not, check your other plugins and WordPress installation
+1. Once you can get the URL without `/category/` working manually, re-enable the plugin and you'll be all set.
+
+You can also report bugs and get advice on the [Pathless Category Links](http://www.anothercoder.com/wordpress/pathless-category-permalinks-plugin "Pathless Category Links homepage") page on blog.
 
 = Why do my category links contain `/?paged=[0-9]`? =
 
