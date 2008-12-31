@@ -16,6 +16,8 @@ Once installed, the plugin will **automatically** change all your category links
 
 There is also an admin panel that will let you enable/disable 301 redirects, as well as change the text to remove from the category link.
 
+**Versions 1.1 Update** - Added the `Update category links with pages` setting to modify category links that contain */page/* to become */?paged*
+
 == Installation ==
 
 1. Upload `pathless-category-links.php` to the `/wp-content/plugins/` directory
@@ -28,11 +30,19 @@ There is also an admin panel that will let you enable/disable 301 redirects, as 
 
 You can disable the automatic 301 redirect feature via the settings. If it is enabled, then ANY link that contains the base category directory (by default */category/*) will be redirected with the base category directory removed.
 
+= Why do my category links contain `/?paged=[0-9]`? =
+
+WordPress does not allow the following link `http://www.anothercoder.com/news/page/2`, it only works with `http://www.anothercoder.com/category/news/page/2`. So, this is a work around to turn ONLY category links that have pages to be rewritten as `http://www.anothercoder.com/news/?paged=2` instead.
+
+The `Update category links with pages` setting in the `Settings > Pathless Category Links` section allows you to disable this work around. But, if it is disabled, then your links will not have the base category directory removed, nor will a 301 redirect be performed.
+
+So, it's up to you, do you want: `http://www.anothercoder.com/category/news/page/2` or do you want `http://www.anothercoder.com/news/?paged=2`
+
 == Screenshots ==
 
 1. The settings admin for the plugin. You can easily disable 301 redirects or change the base category directory, which is */category/* by default.
 
-== A brief Markdown Example ==
+== Primary Benefits ==
 
 * Remove category base directories, */category/* by default, from all category links on the website. So, `http://www.anothercoder.com/category/news` will automatically become `http://www.anothercoder.com/news`
 * Pathless category permalinks provide improved SEO
