@@ -1,5 +1,5 @@
-=== Pathless Category Links ===
-Contributors: another coder
+﻿=== Pathless Category Links ===
+Contributors: anothercoder
 Donate link: http://www.anothercoder.com/
 Tags: category, permalinks, 301 redirect, get_category, get_category_link, category link, top level category links, seo, search engine optimization
 Requires at least: 2.0.2
